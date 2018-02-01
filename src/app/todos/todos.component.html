@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+	<div class="col col-md-4">
+		<h2 style="text-align: center;">Enter Product</h2>
+	<form class="form-group" (ngSubmit)="addTodoLists()" #userForm="ngForm">
+		<input type="text" class="form-control"  name="title" [(ngModel)]="todo.title" required>
+		<label>Enter Password</label>
+		<input class="form-control" type="text" name="work" [(ngModel)]="todo.work" required>
+		<button class="btn btn-success" style="margin-top: 20px;">Submit</button>
+	</form>
+	</div>
+	<div class="col col-md-8">
+   <h2>Store Purchase Product List</h2>
+ <table class="table table-striped">
+     <tr  *ngFor="let todo of todos  let i=index; trackBy: trackById">
+         <td>{{todo.title}}</td>
+         <td>{{todo.work}}</td>
+         <td class="btn btn-primary" (click)="deleteProduct(i)">Delete</td>
+     </tr>
+ </table>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
